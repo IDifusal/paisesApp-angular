@@ -1,0 +1,16 @@
+<h2>Por pais</h2>
+<br>
+<div class="row">
+    <div class="col">
+        <app-input (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" placeholder="Buscar Pais"></app-input>
+    </div>
+</div>
+<hr>
+<div *ngIf="error" class="alert alert-danger">
+    No se encontro nada :( con el termino {{termino}}
+</div>
+<div *ngIf="!error" class="row">
+    <div class="col">
+        <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
+</div>
